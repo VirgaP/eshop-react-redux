@@ -1,0 +1,6 @@
+[
+    {"id": 1, "title": "Milk", "price": 1.99, "inventory": 20},
+    {"id": 2, "title": "Bread", "price": 0.99, "inventory": 100},
+    {"id": 3, "title": "Ham", "price": 9.99, "inventory": 15}
+    {"id": 4, "title": "Cheese", "price": 6.99, "inventory": 15}
+  ]
