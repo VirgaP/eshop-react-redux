@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import '../App.css'
 
 const ProductsList = ({ title, children }) => (
   <div>
     <h3>{title}</h3>
-    <div>{children}</div>
+    <div className="grid-container">{children}</div>
   </div>
 )
 

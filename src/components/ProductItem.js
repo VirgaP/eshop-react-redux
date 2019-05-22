@@ -1,22 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
+import '../App.css'
 
-const ProductItem = ({ product, onAddToCartClicked }) => (
-  <div style={{ marginBottom: 20 }}>
+const ProductItem = ({ product, handleAddToCart }) => (
+  <div className="grid-item">
     <Product
+      className="product-main"
       title={product.title}
       price={product.price}
       image={product.image}
       quantity={product.inventory} />
     <button
-      onClick={onAddToCartClicked}
+      className="button-main add-to-cart"
+      onClick={handleAddToCart}
       disabled={product.inventory > 0 ? '' : 'disabled'}>
       {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
-    </button>
-    <button
-      onClick={onAddToCartClicked}>
-      {product.inventory > 0 ? 'Remove from cart' : 'Sold Out'}
     </button>
   </div>
 )
@@ -27,7 +26,7 @@ ProductItem.propTypes = {
     price: PropTypes.number.isRequired,
     inventory: PropTypes.number.isRequired
   }).isRequired,
-  onAddToCartClicked: PropTypes.func.isRequired
+  handleAddToCart: PropTypes.func.isRequired
 }
 
 export default ProductItem

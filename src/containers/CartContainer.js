@@ -9,7 +9,9 @@ const CartContainer = ({ products, total, checkout }) => (
   <Cart
     products={products}
     total={total}
-    onCheckoutClicked={() => checkout(products)} />
+    onCheckoutClicked={() => checkout(products)} 
+    handleRemoveFromCart={() => checkout(products)} //pakeisti metoda is actions
+    />
 )
 
 CartContainer.propTypes = {

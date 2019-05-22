@@ -16,7 +16,8 @@ import {
         if (state.indexOf(action.productId) !== -1) {
           return state
         }
-        break;
+        return [ ...state, action.productId ]
+      
         case REMOVE_FROM_CART:
         if (state.indexOf(action.productId) !== +1) {
           return state
