@@ -1,5 +1,6 @@
 import {
     ADD_TO_CART,
+    REMOVE_FROM_CART,
     CHECKOUT_REQUEST,
     CHECKOUT_FAILURE
   } from '../constants/ActionTypes'
@@ -27,6 +28,10 @@ import {
         const { productId } = action
         return { ...state,
           [productId]: (state[productId] || 0) + 1
+        }
+        case REMOVE_FROM_CART:
+        return { ...state,
+          [productId]: (state[productId] || 0) - 1
         }
       default:
         return state
