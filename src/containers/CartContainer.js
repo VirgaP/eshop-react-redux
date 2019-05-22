@@ -13,14 +13,6 @@ const CartContainer = ({ products, total, checkout }) => (
     onCheckoutClicked={() => checkout(products)} 
     handleRemoveFromCart={() => removeFromCart(1)}
     /> 
-
-    // {products.map(product =>
-    //   <ProductItem
-    //     key={product.id}
-    //     product={product}
-    //     handleAddToCart={() => addToCart(product.id)} 
-    //     handleRemoveFromCart={() => removeFromCart(product.id)}/>
-    // )}
 )
 
 CartContainer.propTypes = {

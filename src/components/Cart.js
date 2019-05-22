@@ -9,14 +9,10 @@ import CheckoutModal from './modal/CheckoutModal';
   class Cart extends Component {
     constructor(props) {
       super(props);
-      // const { products: propsData } = props;
       this.state = {
-        // pageOfItems: [],
         show: false,
-        // trip: {},
         products: this.props
       };
-      // this.onChangePage = this.onChangePage.bind(this);
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -28,7 +24,6 @@ import CheckoutModal from './modal/CheckoutModal';
 
   showModal = (value) => {
     this.setState({ show: true });
-    // this.fetchSingleTrip(value);
   };
 
   hideModal = () => {
@@ -66,12 +61,16 @@ import CheckoutModal from './modal/CheckoutModal';
       <div className="cart-total">
         <span>TOTAL: {this.props.total} EUR</span>
       </div>
-      <button className="button-main checkout" onClick={this.props.onCheckoutClicked}
+      <button className="button-main checkout" onClick={this.showModal}
         disabled={hasProducts ? '' : 'disabled'}>
         Checkout
       </button>
+      <button className="button-main clear-cart" onClick={this.props.onCheckoutClicked}
+        disabled={hasProducts ? '' : 'disabled'}>
+        Clear cart
+      </button>
       {hasProducts
-          ? <CheckoutModal show={this.state.show} hideModal={this.hideModal} />
+          ? <CheckoutModal show={this.state.show} hideModal={this.hideModal} reset={this.props.onCheckoutClicked} total={this.props.total} />
           : null
         }
     </div>
