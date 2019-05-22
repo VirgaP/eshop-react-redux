@@ -10,6 +10,7 @@ const ProductItem = ({ product, handleAddToCart }) => (
       title={product.title}
       price={product.price}
       image={product.image}
+      description={product.description}
       quantity={product.inventory} />
     <button
       className="button-main add-to-cart"

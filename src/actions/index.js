@@ -28,10 +28,8 @@ export const addToCart = productId => (dispatch, getState) => {
   }
 }
 
-export const removeFromCart = productId => (dispatch, getState) => {
-  if (getState().products.byId[productId].inventory > 0) {
+export const removeFromCart = productId => (dispatch) => {
     dispatch(removeFromCartUnsafe(productId))
-  }
 }
 
 

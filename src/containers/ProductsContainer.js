@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { addToCart, removeFromCart } from '../actions'
+import { addToCart } from '../actions'
 import { getVisibleProducts } from '../reducers/products'
 import ProductItem from '../components/ProductItem'
 import ProductsList from '../components/ProductsList'
 
 const ProductsContainer = ({ products, addToCart, removeFromCart }) => (
-  <ProductsList title="Products">
+  <ProductsList title="Our products">
     {products.map(product =>
       <ProductItem
         key={product.id}
@@ -23,10 +23,11 @@ ProductsContainer.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    imgage: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     inventory: PropTypes.number.isRequired
   })).isRequired,
   addToCart: PropTypes.func.isRequired,
-  removeFromCart: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -35,5 +36,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addToCart, removeFromCart }
+  { addToCart }
 )(ProductsContainer)

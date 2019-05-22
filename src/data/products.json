@@ -1,8 +1,8 @@
 [
-    {"id": 1, "title": "Milk", "price": 1.99, "image": "https://previews.123rf.com/images/lineartestpilot/lineartestpilot1802/lineartestpilot180212671/94855133-cartoon-milk-carton.jpg", "inventory": 20},
-    {"id": 2, "title": "Bread", "price": 0.99, "image": "https://previews.123rf.com/images/lemonadeserenade/lemonadeserenade1512/lemonadeserenade151200074/49392558-bread-a-hand-drawn-vector-illustration-of-a-sliced-off-bread-the-sketch-colors-and-the-background-sh.jpg", "inventory": 100},
-    {"id": 3, "title": "Ham", "price": 9.99, "image": "https://previews.123rf.com/images/igormalovic/igormalovic1604/igormalovic160400120/55349173-cartoon-illustration-of-a-ham-isolated-on-white.jpg", "inventory": 15},
-    {"id": 4, "title": "Cheese", "price": 6.99, "image": "https://previews.123rf.com/images/lineartestpilot/lineartestpilot1603/lineartestpilot160334508/53900625-freehand-textured-cartoon-cheese.jpg", "inventory": 15},
-    {"id": 5, "title": "Eggs", "price": 1.09, "image": "https://media.istockphoto.com/vectors/eggs-vector-id501447745?k=6&m=501447745&s=612x612&w=0&h=TE9aVLNWtUdZ6xY_SC8PS-rUHZEp3MD_8qL_jPPjTnw=", "inventory": 5}
+    {"id": 1, "title": "Milk", "price": 1.99, "image": "https://previews.123rf.com/images/lineartestpilot/lineartestpilot1802/lineartestpilot180212671/94855133-cartoon-milk-carton.jpg", "description": "Whole milk, 3% fat. Produced in Lithuania. Best before: 2019-06-01",  "inventory": 20},
+    {"id": 2, "title": "Bread", "price": 0.99, "image": "https://previews.123rf.com/images/lemonadeserenade/lemonadeserenade1512/lemonadeserenade151200074/49392558-bread-a-hand-drawn-vector-illustration-of-a-sliced-off-bread-the-sketch-colors-and-the-background-sh.jpg", "description": "Gluten free mix seed bread. Produced in Lithuania. Best before 2019-06-03","inventory": 100},
+    {"id": 3, "title": "Ham", "price": 9.99, "image": "https://previews.123rf.com/images/igormalovic/igormalovic1604/igormalovic160400120/55349173-cartoon-illustration-of-a-ham-isolated-on-white.jpg", "description":"Ham. Produced in Portugal. Best before 2019-06-15", "inventory": 15},
+    {"id": 4, "title": "Cheese", "price": 6.99, "image": "https://previews.123rf.com/images/lineartestpilot/lineartestpilot1603/lineartestpilot160334508/53900625-freehand-textured-cartoon-cheese.jpg", "description":"Gouda cheese. Produced in Holland. Best before 2019-06-20", "inventory": 15},
+    {"id": 5, "title": "Eggs", "price": 1.09, "image": "https://media.istockphoto.com/vectors/eggs-vector-id501447745?k=6&m=501447745&s=612x612&w=0&h=TE9aVLNWtUdZ6xY_SC8PS-rUHZEp3MD_8qL_jPPjTnw=", "description":"Free-range chicken eggs. Produced in Latvia. Best before 2019-05-30", "inventory": 5}
 
   ]
