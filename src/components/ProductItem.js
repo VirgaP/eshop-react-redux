@@ -7,6 +7,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
     <Product
       title={product.title}
       price={product.price}
+      image={product.image}
       quantity={product.inventory} />
     <button
       onClick={onAddToCartClicked}

@@ -1,9 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import '../App.css';
 
-const Product = ({ price, quantity, title }) => (
+const Product = ({ price, quantity, title, image }) => (
   <div>
-    {title} - &#36;{price}{quantity ? ` x ${quantity}` : null}
+    <img className="product-image" src={image} alt={title}/> - {title} - &#36;{price}{quantity ? ` x ${quantity}` : null}
   </div>
 )
 

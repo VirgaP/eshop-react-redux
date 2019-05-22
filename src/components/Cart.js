@@ -8,6 +8,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
     products.map(product =>
       <Product
         title={product.title}
+        image={product.image}
         price={product.price}
         quantity={product.quantity}
         key={product.id}
@@ -19,7 +20,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
 
   return (
     <div>
-      <h3>Your Cart</h3>
+      <h3>Your Shopping Cart</h3>
       <div>{nodes}</div>
       <p>Total: &#36;{total}</p>
       <button onClick={onCheckoutClicked}
