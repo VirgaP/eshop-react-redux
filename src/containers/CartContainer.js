@@ -11,7 +11,7 @@ const CartContainer = ({ products, total, checkout }) => (
     products={products}
     total={total}
     onCheckoutClicked={() => checkout(products)} 
-    handleRemoveFromCart={() => removeFromCart(1)}
+    handleRemoveFromCart={() => removeFromCart(1)}//TODO
     /> 
 )
 

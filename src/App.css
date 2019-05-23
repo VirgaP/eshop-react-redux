@@ -230,7 +230,7 @@ body{
     }
     .logo-title{
       font-size: xx-large;
-      margin: 1rem;
+      margin: 2rem;
     }
     .add-to-cart{
       font-size: 25px;
@@ -251,11 +251,12 @@ body{
     .clear-cart{
       font-size: 30px;
       margin-left: .5rem;
+      margin-top: 1rem;
     }
     
     .cart-total{
       font-size: 18px;
-      margin-left: .5rem
+      margin-left: .5rem;
     }
     .tooltip{
       font-size: 25px;

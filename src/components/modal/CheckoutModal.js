@@ -46,20 +46,17 @@ class CheckoutModal extends Component {
       <Modal show={show} id="modal-info">
         <ModalHeader headerTitle="CHECKOUT COUNTER" />
         <ModalContent>
-          <div>{this.props.total}</div>
+          <div>Total price of your purchase: {this.props.total} EUR</div>
+          <div>Select delivery option</div>
           <ModalFooter className="modal-board__footer">
-            <div className="modal-btn-1">
-              <button className="button-main"
+                <button className="button-main modal-btn-1"
                 onClick={hideModal}>
                 Continue shopping
                 </button>
-            </div>
-            <div className="modal-btn-2">
-            <button className="button-main"
+                <button className="button-main modal-btn-2"
                 onClick={this.props.onCheckoutClicked}>
                 Proceed to payment
                 </button>
-            </div>
           </ModalFooter>
         </ModalContent>
       </Modal>
