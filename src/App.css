@@ -98,6 +98,12 @@ body{
 .product-cart span{
   padding: 5px;
 }
+
+.error{
+  font-style: italic;
+  color: orangered;
+ }
+
 .button-main{
   color: #494949 !important;
   text-transform: uppercase;
@@ -177,7 +183,7 @@ body{
   /* modal */
   .modal-board {
     align-items: center;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.614);
     display: none;
     height: 100vh;
     justify-content: center;
@@ -225,7 +231,6 @@ body{
     color: #f6b93b;
     border: 1px solid grey;
     display: flex;
-    justify-content: space-between;
     padding: 10px 20px;
     margin-bottom: 2rem;
     font-size: 2rem;
@@ -234,10 +239,42 @@ body{
     }
   
   .modal-btn-1{
-    /* position: absolute;
-    left: -320px; */
-    margin-left: 3%;
+    margin-left: 5%;
+    font-size: 25px;
   }
+  .modal-btn-2{
+    margin-right: 5%;
+    font-size: 25px;
+  }
+
+  .modal-checkout-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 5%;
+  }
+
+  .modal-total{
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+
+  .modal-select{
+    font-size: 20px;
+    padding: 0 5px 0 5px;
+    border-radius: 10px;
+  }
+
+ .modal-select option{
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 500;
+ }
+
+ .modal-error{
+  padding: 20px;
+  font-size: 20px;
+ }
 
   @media only screen and (max-width: 600px) {
     body{
@@ -283,4 +320,34 @@ body{
       font-size: 1rem;
       padding: 5px 10px;
     }
+
+    .modal-btn-1{
+      margin-right: 2%;
+      font-size: 12px;
+    }
+    .modal-btn-2{
+      margin-right: 2%;
+      font-size: 12px;
+      object-fit: contain;
+    }
+
+    .modal-select{
+      font-size: 25%;
+      padding: 0;
+    }
+    .modal-total{
+      font-size: 75%;
+    }
+    .modal-error{
+      font-size: 80%;
+      text-align: center;
+      padding-top: 0;
+    }
+    .modal-checkout-section > select{
+      max-width: 100%; 
+      text-overflow: ellipsis;
+     }
+     .modal-select option{
+       font-size: 25%;
+     }
   }

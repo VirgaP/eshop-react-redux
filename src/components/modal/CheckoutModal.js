@@ -8,20 +8,21 @@ class CheckoutModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      disable: true,
+      errorMessage: 'Please choose delivery option',
+      deliveryFee: ''
       }
-      // this.hideModal = this.handleClick.bind(this);
     }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.keydownHandler, false);
+    document.addEventListener('keydown', this.escKeyHandler, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.keydownHandler, false);
+    document.removeEventListener('keydown', this.escKeyHandler, false);
   }
 
-  keydownHandler = (event) => {
+  escKeyHandler = (event) => {
     const { hideModal } = this.props;
     if (event.keyCode === 27) {
       hideModal();
@@ -33,24 +34,49 @@ class CheckoutModal extends Component {
     this.props.hideModal();
   }
 
+  handleSelect=(e)=>{
+    const delivery = e.target.value
+    console.log("select ", e.target.value)
+    if(delivery === "express"){
+      this.setState({ deliveryFee: 5 })
+    }if(delivery === "standard"){
+      this.setState({ deliveryFee: 2 })
+    }if(delivery === "self"){
+      this.setState({ deliveryFee: 0 })
+    }if(delivery != null ||delivery !== "options"){
+      this.setState({ disable: false, errorMessage:"" })
+    } 
+  }
+
   render() {
     const { show, hideModal } = this.props;
-    
+    console.log(typeof this.props.total)
+    const totalPrice = parseFloat(this.props.total) + this.state.deliveryFee;
     return (
       <Modal show={show} id="modal-info">
         <ModalHeader headerTitle="CHECKOUT COUNTER" />
         <ModalContent>
-          <div>
-            <span>Total price of your purchase: {this.props.total} EUR</span>
+          <div className="error modal-error">
+          <span>{this.state.errorMessage}</span>
           </div>
-          <div>Select delivery option</div>
+          <div className="modal-checkout-section">
+            <span className="modal-total">Total price of your purchase: {totalPrice} EUR</span>
+            <select className="modal-select" onChange={this.handleSelect}>
+              <option value = "options" >Delivery options</option>
+              <option value="self">I will pick it up myself - 0 EUR</option>
+              <option value="express">Express delivery (2 hrs) - 5 EUR</option>
+              <option value="standard">Standart delivery (6hrs) - 2 EUR</option>
+            </select>
+          </div>
           <ModalFooter className="modal-board__footer">
                 <button className="button-main modal-btn-1"
                 onClick={hideModal}>
                 Continue shopping
                 </button>
                 <button className="button-main modal-btn-2"
-                onClick={this.handlePaymentAction}>
+                onClick={this.handlePaymentAction}
+                disabled={this.state.disable}
+                >
                 Proceed to payment
                 </button>
           </ModalFooter>
