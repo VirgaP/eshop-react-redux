@@ -5,8 +5,7 @@ import Product from './Product'
 import '../App.css'
 import CheckoutModal from './modal/CheckoutModal';
 
-// const Cart  = ({ products, total, onCheckoutClicked, handleRemoveFromCart }) => {
-  class Cart extends Component {
+class Cart extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -32,7 +31,6 @@ import CheckoutModal from './modal/CheckoutModal';
 
   render() {
   const hasProducts = this.state.products.length > 0
-  console.log("hasProducts", hasProducts)
   const nodes = hasProducts ? (
     this.state.products.map(product =>
       <div className="cart-item">

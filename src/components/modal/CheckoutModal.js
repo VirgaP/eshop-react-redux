@@ -34,6 +34,10 @@ class CheckoutModal extends Component {
     this.props.hideModal();
   }
 
+  calculateTotalPrice=(total, delivery)=>{
+    return total + delivery
+  }
+
   handleSelect=(e)=>{
     const delivery = e.target.value
     console.log("select ", e.target.value)
@@ -50,7 +54,8 @@ class CheckoutModal extends Component {
 
   render() {
     const { show, hideModal } = this.props;
-    console.log(typeof this.props.total)
+    // const totalNum = parseFloat(this.props.total)
+    // const totalPrice = this.calculateTotalPrice(totalNum + this.state.deliveryFee)
     const totalPrice = parseFloat(this.props.total) + this.state.deliveryFee;
     return (
       <Modal show={show} id="modal-info">
@@ -61,7 +66,7 @@ class CheckoutModal extends Component {
           </div>
           <div className="modal-checkout-section">
             <span className="modal-total">Total price of your purchase: {totalPrice} EUR</span>
-            <select className="modal-select" onChange={this.handleSelect}>
+            <select name="delivery" className="modal-select" onChange={this.handleSelect}>
               <option value = "options" >Delivery options</option>
               <option value="self">I will pick it up myself - 0 EUR</option>
               <option value="express">Express delivery (2 hrs) - 5 EUR</option>

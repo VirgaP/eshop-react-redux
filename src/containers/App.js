@@ -4,33 +4,13 @@ import CartContainer from './CartContainer'
 import { Widget, addResponseMessage } from 'react-chat-widget';
 import 'react-chat-widget/lib/styles.css';
 
- 
-// const App = () => (
-//   <div>
-//     <h2 className="main-title"><span className="logo-title">Quick & Easy</span> online grocery shopping</h2>
-//     <hr/>
-//     <ProductsContainer />
-//     <hr/>
-//     <CartContainer />
-//     <div className="App">
-//         <Widget />
-//       </div>
-//   </div>
-// )
-
-// export default App
-
-
-
 class App extends Component {
   componentDidMount() {
-    addResponseMessage("Welcome to Quick & Easy chat! How may we help you today?");
+    addResponseMessage("Welcome to Quick & Easy chat! ");
   }
 
   handleNewUserMessage = (newMessage) => {
-    const response = "Please hold."
-    console.log(`New message incomig! ${newMessage}`);
-    // Now send the message throught the backend API
+    const response = "How may we help you today?"
     addResponseMessage(response);
   }
 

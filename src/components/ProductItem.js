@@ -23,11 +23,11 @@ const ProductItem = ({ product, handleAddToCart }) => (
 
 ProductItem.propTypes = {
   product: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    inventory: PropTypes.number.isRequired
-  }).isRequired,
-  handleAddToCart: PropTypes.func.isRequired
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inventory: PropTypes.number
+  }),
+  handleAddToCart: PropTypes.func
 }
 
 export default ProductItem

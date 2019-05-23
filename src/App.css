@@ -26,6 +26,9 @@ body{
   padding: 20px;
   font-size: 30px;
   text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
 }
 
 .product-main{
@@ -337,6 +340,7 @@ body{
     }
     .modal-total{
       font-size: 75%;
+      padding: 2%;
     }
     .modal-error{
       font-size: 80%;
