@@ -1,5 +1,7 @@
-// import React from 'react'
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { removeFromCart } from '../actions'
+import { getCartProducts } from '../reducers'
 import PropTypes from 'prop-types'
 import Product from './Product'
 import '../App.css'
@@ -43,9 +45,7 @@ class Cart extends Component {
         key={product.id}/>
       <button
       className="button-remove"
-      onClick={this.props.handleRemoveFromCart}>Remove from cart</button>
-      {/* onClick={() => removeFromCart(product.id)}>Remove from cart</button> */}
-      {/* handleRemoveFromCart={() => removeFromCart(product.id)}/> */}
+      onClick={() => removeFromCart(product.id)}>Remove from cart</button>
     </div>
     )
   ) : (
@@ -63,7 +63,7 @@ class Cart extends Component {
         disabled={hasProducts ? '' : 'disabled'}>
         Checkout
       </button>
-      <button className="button-main clear-cart" onClick={this.props.onCheckoutClicked}
+      <button className="button-main clear-cart" onClick={this.props.handleClearCart}
         disabled={hasProducts ? '' : 'disabled'}>
         Clear cart
       </button>
@@ -87,4 +87,10 @@ Cart.propTypes = {
   handleRemoveFromCart: PropTypes.func
 }
 
-export default Cart
+const mapStateToProps = (state) => ({
+  products: getCartProducts(state),
+})
+export default connect(
+  mapStateToProps,
+  { removeFromCart }
+)(Cart)

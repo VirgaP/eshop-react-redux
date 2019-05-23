@@ -40,7 +40,6 @@ class CheckoutModal extends Component {
 
   handleSelect=(e)=>{
     const delivery = e.target.value
-    console.log("select ", e.target.value)
     if(delivery === "express"){
       this.setState({ deliveryFee: 5 })
     }if(delivery === "standard"){
@@ -54,8 +53,7 @@ class CheckoutModal extends Component {
 
   render() {
     const { show, hideModal } = this.props;
-    // const totalNum = parseFloat(this.props.total)
-    // const totalPrice = this.calculateTotalPrice(totalNum + this.state.deliveryFee)
+ 
     const totalPrice = parseFloat(this.props.total) + this.state.deliveryFee;
     return (
       <Modal show={show} id="modal-info">

@@ -28,10 +28,11 @@ export const addToCart = productId => (dispatch, getState) => {
   }
 }
 
-export const removeFromCart = productId => (dispatch) => {
+export const removeFromCart = productId => (dispatch, getState) => {
+  if (getState().products.byId[productId]){
     dispatch(removeFromCartUnsafe(productId))
+  }
 }
-
 
 export const checkout = products => (dispatch, getState) => {
   const { cart } = getState()
@@ -44,7 +45,19 @@ export const checkout = products => (dispatch, getState) => {
       type: types.CHECKOUT_SUCCESS,
       cart
     })
-    // Replace the line above with line below to rollback on failure:
-    // dispatch({ type: types.CHECKOUT_FAILURE, cart })
+  })
+}
+
+export const clearCart = products => (dispatch, getState) => {
+  const { cart } = getState()
+
+  dispatch({
+    type: types.CLEAR_CART
+  })
+  shop.getProducts(products, () => {
+    dispatch({
+      type: types.RECEIVE_PRODUCTS,
+      cart
+    })
   })
 }
