@@ -1,6 +1,9 @@
 import React from 'react'
 import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
+import { Widget } from 'react-chat-widget'
+import 'react-chat-widget/lib/styles.css'
+
  
 const App = () => (
   <div>
@@ -9,6 +12,9 @@ const App = () => (
     <ProductsContainer />
     <hr/>
     <CartContainer />
+    <div className="App">
+        <Widget />
+      </div>
   </div>
 )
 

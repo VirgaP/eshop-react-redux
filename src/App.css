@@ -197,6 +197,7 @@ body{
     .modal-board-active {
       display: flex;
     }
+
     .modal-board__container {
       display:block; 
       position: relative;
@@ -209,7 +210,7 @@ body{
       width: 60%;
     }
   
-    .modal-board__footer{
+  .modal-board__footer{
       align-items: center;
       display: flex;
       justify-content: space-between;
@@ -217,6 +218,20 @@ body{
       padding-bottom: 3%;
       padding-top: 2%;
   }
+
+  .modal-header__title {
+    align-items: center;
+    background-color: #ffffff;
+    color: #f6b93b;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    }
   
   .modal-btn-1{
     /* position: absolute;
@@ -263,5 +278,9 @@ body{
     }
     .tooltip .top{
       font-size: 18px;
+    }
+    .modal-header__title {
+      font-size: 1rem;
+      padding: 5px 10px;
     }
   }

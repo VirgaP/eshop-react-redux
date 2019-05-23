@@ -70,7 +70,11 @@ import CheckoutModal from './modal/CheckoutModal';
         Clear cart
       </button>
       {hasProducts
-          ? <CheckoutModal show={this.state.show} hideModal={this.hideModal} reset={this.props.onCheckoutClicked} total={this.props.total} />
+          ? <CheckoutModal 
+            show={this.state.show} 
+            hideModal={this.hideModal} 
+            reset={this.props.onCheckoutClicked} 
+            total={this.props.total} />
           : null
         }
     </div>
