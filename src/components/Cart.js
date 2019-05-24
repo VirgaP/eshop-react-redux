@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { removeFromCart } from '../actions'
-import { getCartProducts } from '../reducers'
 import PropTypes from 'prop-types'
 import Product from './Product'
 import '../App.css'
@@ -23,14 +20,14 @@ class Cart extends Component {
       return null;
     }
 
-  showModal = (value) => {
+  showModal = () => {
     this.setState({ show: true });
   };
 
   hideModal = () => {
     this.setState({ show: false });
   };
-
+  
   render() {
   const hasProducts = this.state.products.length > 0
   const nodes = hasProducts ? (
@@ -42,16 +39,16 @@ class Cart extends Component {
         title={product.title}
         price={product.price}
         quantity={product.quantity}
-        key={product.id}/>
+        key={product.id}
+        />
       <button
       className="button-remove"
-      onClick={() => removeFromCart(product.id)}>Remove from cart</button>
+      onClick={this.props.handleRemoveFromCart}>Remove</button>
     </div>
     )
   ) : (
-    <em>Please add some products to cart.</em>
+    <em>Your cart is empty.</em>
   )
-
   return (
     <div className="cart">
       <h3>Shopping Cart</h3>
@@ -84,13 +81,7 @@ Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
   onCheckoutClicked: PropTypes.func,
-  handleRemoveFromCart: PropTypes.func
 }
 
-const mapStateToProps = (state) => ({
-  products: getCartProducts(state),
-})
-export default connect(
-  mapStateToProps,
-  { removeFromCart }
-)(Cart)
+export default Cart
+

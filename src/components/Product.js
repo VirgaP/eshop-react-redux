@@ -8,8 +8,8 @@ const Product = ({ price, title, image, description, quantity, className }) => (
     <span className="product-title">{title} </span>
     <span className="product-price">{price} EUR</span>
     <span className="product-quantity">Qnty: {quantity ? ` x ${quantity}` : null}</span>
-    <div class="btn btn-primary tooltip">About the product
-    <div class="top">
+    <div className="btn btn-primary tooltip">About the product
+    <div className="top">
     {description}
         <i></i>
     </div>

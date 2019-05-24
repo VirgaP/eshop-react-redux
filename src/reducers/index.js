@@ -24,3 +24,12 @@ export const getCartProducts = state =>
     ...getProduct(state, id),
     quantity: getQuantity(state, id)
   }))
+
+  
+export const getCartProduct = (state) =>
+  getAddedIds(state).forEach(item => {
+    return item
+  })
+
+
+ 

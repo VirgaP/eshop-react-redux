@@ -34,10 +34,6 @@ class CheckoutModal extends Component {
     this.props.hideModal();
   }
 
-  calculateTotalPrice=(total, delivery)=>{
-    return total + delivery
-  }
-
   handleSelect=(e)=>{
     const delivery = e.target.value
     if(delivery === "express"){

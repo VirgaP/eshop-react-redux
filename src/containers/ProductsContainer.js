@@ -1,19 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { addToCart, removeFromCart } from '../actions'
+import { addToCart } from '../actions'
 import { getVisibleProducts } from '../reducers/products'
 import ProductItem from '../components/ProductItem'
 import ProductsList from '../components/ProductsList'
 
-const ProductsContainer = ({ products, addToCart, removeFromCart }) => (
+const ProductsContainer = ({ products, addToCart }) => (
   <ProductsList title="Our products">
     {products.map(product =>
       <ProductItem
         key={product.id}
         product={product}
         handleAddToCart={() => addToCart(product.id)} 
-        handleRemoveFromCart={() => removeFromCart(product.id)}/>
+      />
     )}
   </ProductsList>
 )
@@ -36,5 +36,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addToCart, removeFromCart }
+  { addToCart }
 )(ProductsContainer)

@@ -50,14 +50,10 @@ export const checkout = products => (dispatch, getState) => {
 
 export const clearCart = products => (dispatch, getState) => {
   const { cart } = getState()
-
   dispatch({
     type: types.CLEAR_CART
   })
-  shop.getProducts(products, () => {
-    dispatch({
-      type: types.RECEIVE_PRODUCTS,
-      cart
-    })
+  shop.getProducts(products => {
+    dispatch(receiveProducts(products), cart)
   })
 }

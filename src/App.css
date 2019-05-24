@@ -105,6 +105,7 @@ body{
 .error{
   font-style: italic;
   color: orangered;
+  text-align: center;
  }
 
 .button-main{
@@ -197,17 +198,17 @@ body{
     width: 100vw;
     z-index: 99999;
   }
-    .display-block{
+  .display-block{
       display: block;
-    }
-    .display-none {
+  }
+  .display-none {
       display: none;
-    }
-    .modal-board-active {
+  }
+  .modal-board-active {
       display: flex;
-    }
+  }
 
-    .modal-board__container {
+  .modal-board__container {
       display:block; 
       position: relative;
       background-color: #eeecec;
@@ -222,7 +223,7 @@ body{
   .modal-board__footer{
       align-items: center;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       width: 100%;
       padding-bottom: 3%;
       padding-top: 2%;
@@ -244,10 +245,12 @@ body{
   .modal-btn-1{
     margin-left: 5%;
     font-size: 25px;
+    padding: 2%;
   }
   .modal-btn-2{
     margin-right: 5%;
     font-size: 25px;
+    padding: 2%;
   }
 
   .modal-checkout-section{
@@ -262,7 +265,7 @@ body{
     font-family: sans-serif;
   }
 
-  .modal-select{
+.modal-select{
     font-size: 20px;
     padding: 0 5px 0 5px;
     border-radius: 10px;
@@ -284,8 +287,12 @@ body{
       padding: 1rem;
     }
     .logo-title{
-      font-size: xx-large;
-      margin: 2rem;
+      font-size: 3rem;
+    }
+
+    .grid-item{
+      display: flex;
+      flex-flow: column wrap;
     }
     .add-to-cart{
       font-size: 25px;
@@ -327,17 +334,18 @@ body{
     .modal-btn-1{
       margin-right: 2%;
       font-size: 12px;
+      padding: 3px
     }
     .modal-btn-2{
       margin-right: 2%;
       font-size: 12px;
-      object-fit: contain;
+      padding: 3px;
     }
 
-    .modal-select{
+    .modal-select, .modal-select option {
+      text-overflow: ellipsis;
       font-size: 25%;
-      padding: 0;
-    }
+ }
     .modal-total{
       font-size: 75%;
       padding: 2%;
@@ -347,11 +355,5 @@ body{
       text-align: center;
       padding-top: 0;
     }
-    .modal-checkout-section > select{
-      max-width: 100%; 
-      text-overflow: ellipsis;
-     }
-     .modal-select option{
-       font-size: 25%;
-     }
+
   }
